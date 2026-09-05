@@ -1,0 +1,255 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    color: #D4AF37;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --gold-gradient: linear-gradient(
+        135deg,
+        #D4AF37 0%,
+        #EDDF9B 45%,
+        #D4AF37 100%
+    );
+
+    --gold: #D4AF37;
+    --light-gold: #EDDF9B;
+    --black: #000000;
+    --dark-box: #1A1A1A;
+}
+
+.mainpage {
+    background: var(--black);
+    --black: #000000;
+}
+
+/*****************************sa topinbox**/
+
+.topbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+
+    background: #1A1A1A;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1000;
+}
+
+.topbox h4 {
+    color: var(--gold);
+    margin: 0 0 0 30px;
+}
+
+.navigation {
+    display: flex;
+    gap: 10px;
+    margin-right: 30px;
+}
+
+.navigation button {
+    background: none;
+    border: none;
+    color: var(--gold);
+    padding: 10px 0;
+    margin-left: 25px;
+    cursor: pointer;
+
+    font-size: 14px;
+    letter-spacing: 1px;
+
+    position: relative;
+}
+
+.navigation button.active {
+    color: var(--light-gold);
+}
+
+.navigation button.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 2px;
+
+    background: var(--gold-gradient);
+}
+
+/*****************************sa topinbox**/
+
+/***************************************yung precision saka imglogoland**/
+.mainpage > img {
+    position: fixed;
+    top: 116px;
+    right: 10%;
+    width: 40%;
+    height: 40%;
+
+    border-radius: 4px;
+}
+.mainpage > h2 {
+    position: absolute;
+    top: 120px;
+    left: 2.5%;
+
+    width: 40%;
+
+    margin: 0;
+
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.mainpage > h5 {
+    position: absolute;
+    top: 400px;
+    left: 2.5%;
+
+    margin: 0;
+
+    color: var(--gold);
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: bold;
+}
+.mainpage > h5 button {
+    padding: 12px 28px;
+    margin-left: 15px;
+
+    background: var(--gold);
+    color: var(--black);
+
+    border: 1px solid var(--gold);
+    cursor: pointer;
+}
+.mainpage > h5 button {
+    padding: 12px 28px;
+    margin-left: 1px;
+    cursor: pointer;
+}
+#reviewServices {
+    background: var(--gold-gradient);
+    color: var(--black);
+    border: none;
+}
+#bookAppointment {
+    background: var(--black);
+    color: var(--gold);
+    border: 1px solid var(--gold);
+}
+
+/***************************************yung precision saka imglogoland**/
+
+
+
+
+/*******************************************************************************featured services re**/
+.featuredBox { /********************************dine aayusin yung box ng featured taas baba**/
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1vh;
+    width: 100%;
+    height: 35vh;
+    background: #1A1A1A;
+}
+
+.featuredBox > h4 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 18px 0;
+    color: #D4AF37;
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+#signatureManicure,
+#spaPedicure,
+#customArt,
+#gelExtensions {
+    position: absolute;
+    bottom: 2vh;
+    width: 22%;
+    height: 23vh;
+    padding: 0;
+    background: #1A1A1A;
+    color: #D4AF37;
+    border: none;
+    text-align: left;
+    cursor: pointer;
+}
+
+#signatureManicure {
+    left: 1.5%;
+}
+
+#spaPedicure {
+    left: 26%;
+}
+
+#customArt {
+    left: 50.5%;
+}
+
+#gelExtensions {
+    left: 75%;
+}
+
+#signatureManicure img,
+#spaPedicure img,
+#customArt img,
+#gelExtensions img {
+    width: 85%;
+    height: 17vh;
+    border-radius: 4px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+#signatureManicure h3,
+#spaPedicure h3,
+#customArt h3,
+#gelExtensions h3 {
+    margin: 8px 0 0;
+
+    color: #D4AF37;
+
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+#signatureManicure h3 b,
+#spaPedicure h3 b,
+#customArt h3 b,
+#gelExtensions h3 b {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #999999;
+
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+}
+/*******************************************************************************featured services re**/
