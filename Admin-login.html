@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>LioNails - Admin Login</title>
+</head>
+
+<body>
+
+    <section class="loginPage">
+        <div class="loginWrapper">
+            <h1>LioNails Admin</h1>
+            <p>Management System</p>
+
+            <form id="loginForm">
+                <div class="inputGroup">
+                    <label>Username</label>
+                    <input type="text" id="username" placeholder="Enter username" required>
+                </div>
+
+                <div class="inputGroup">
+                    <label>Password</label>
+                    <input type="password" id="password" placeholder="Enter password" required>
+                </div>
+
+                <div id="errorMessage" class="errorMessage"></div>
+
+                <button type="submit" class="loginButton">LOGIN</button>
+            </form>
+
+            <!-- nasa java script na to pero option ko lang to kung idedemo natin ung admin login
+            <div class="demoAccount">
+                <p>Demo Accounts:</p>
+                <small>owner / lionails</small><br>
+                <small>staff / staff123</small><br>
+                <small>manager / manager123</small>
+            </div>
+        -->
+
+            <a href="index.html" class="backLink">← Back to Website</a>
+        </div>
+    </section>
+
+    <script src="admin-script.js"></script>
+</body>
+
+</html>

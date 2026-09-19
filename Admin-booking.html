@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>LioNails - Admin Bookings</title>
+</head>
+
+<body>
+
+    <div class="adminLayout">
+
+        <aside class="adminSidebar">
+            <div class="sidebarLogo">
+                <h3>LioNails Admin</h3>
+            </div>
+
+            <ul class="sidebarMenu">
+                <li><a href="Admin-dashboard.html">Dashboard</a></li>
+                <li><a href="Admin-booking.html" class="active">Bookings</a></li>
+                <li><a href="Admin-services.html">Services</a></li>
+                <li><a href="Admin-customers.html">Customers/Clients Records</a></li>
+            </ul>
+
+            <div class="logoutSection">
+                <button class="logoutBtn" onclick="logout()">LOGOUT</button>
+            </div>
+        </aside>
+
+        <main class="adminContent">
+
+            <header class="adminHeader">
+                <div>
+                    <h1>Bookings</h1>
+                    <p class="adminWelcome">Review and manage appointment requests.</p>
+                </div>
+            </header>
+
+            <div class="filterSection">
+                <button class="filterBtn active" data-filter="all">All</button>
+                <button class="filterBtn" data-filter="pending">Pending</button>
+                <button class="filterBtn" data-filter="confirmed">Confirmed</button>
+                <button class="filterBtn" data-filter="cancelled">Cancelled</button>
+            </div>
+
+            <section class="tableSection">
+                <h2>Appointment Requests</h2>
+
+                <table class="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Phone</th>
+                            <th>Service</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="bookingsTableBody">
+                        <tr>
+                            <td colspan="7">No bookings yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="Admin-script.js"></script>
+
+    <script>
+        checkLogin();
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>LioNails - Admin Customers</title>
+</head>
+
+<body>
+
+    <div class="adminLayout">
+
+        <aside class="adminSidebar">
+            <div class="sidebarLogo">
+                <h3>LioNails Admin</h3>
+            </div>
+
+            <ul class="sidebarMenu">
+                <li><a href="Admin-dashboard.html">Dashboard</a></li>
+                <li><a href="Admin-booking.html">Bookings</a></li>
+                <li><a href="Admin-services.html">Services</a></li>
+                <li><a href="Admin-customers.html" class="active">Customer/Clients</a></li>
+            </ul>
+
+            <div class="logoutSection">
+                <button class="logoutBtn" onclick="logout()">LOGOUT</button>
+            </div>
+        </aside>
+
+        <main class="adminContent">
+
+            <header class="adminHeader">
+                <div>
+                    <h1>Customers/Clients</h1>
+                    <p class="adminWelcome">View client records and appointment history.</p>
+                </div>
+            </header>
+
+            <section class="cardsWrapper">
+                <div class="card">
+                    <p class="cardTitle">Total Customers.Clients</p>
+                    <p class="cardValue" id="customerCount">0</p>
+                    <p class="cardSubtext">Unique client records</p>
+                </div>
+
+                <div class="card">
+                    <p class="cardTitle">New This Month</p>
+                    <p class="cardValue" id="newCustomerCount">0</p>
+                    <p class="cardSubtext">First-time clients</p>
+                </div>
+            </section>
+
+            <section class="tableSection">
+                <h2>Client Records</h2>
+
+                <table class="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Client Name</th>
+                            <th>Phone Number</th>
+                            <th>Total Bookings</th>
+                            <th>Latest Appointment</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="customersTableBody">
+                        <tr>
+                            <td colspan="4">
+                                Client records will appear here after bookings are submitted.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="Admin-script.js"></script>
+
+    <script>
+        checkLogin();
+    </script>
+
+</body>
+
+</html>

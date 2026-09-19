@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>LioNails - Admin Dashboard</title>
+</head>
+
+<body>
+
+    <div class="adminLayout">
+
+        <aside class="adminSidebar">
+            <div class="sidebarLogo">
+                <h3>LioNails Admin</h3>
+            </div>
+
+            <ul class="sidebarMenu">
+                <li><a href="Admin-dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="Admin-booking.html">Bookings</a></li>
+                <li><a href="Admin-services.html">Services</a></li>
+                <li><a href="Admin-customers.html">Customers/Clients Records</a></li>
+            </ul>
+
+            <div class="logoutSection">
+                <button class="logoutBtn" onclick="logout()">LOGOUT</button>
+            </div>
+        </aside>
+
+        <main class="adminContent">
+
+            <header class="adminHeader">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p class="adminWelcome">Welcome back to LioNails Management System.</p>
+                </div>
+
+                <div class="adminUser">
+                    <p id="currentDate"></p>
+                </div>
+            </header>
+
+            <section class="cardsWrapper">
+                <div class="card">
+                    <p class="cardTitle">Total Bookings</p>
+                    <p class="cardValue" id="totalBookings">0</p>
+                    <p class="cardSubtext">All appointment requests</p>
+                </div>
+
+                <div class="card">
+                    <p class="cardTitle">Pending</p>
+                    <p class="cardValue" id="pendingBookings">0</p>
+                    <p class="cardSubtext">Waiting for confirmation</p>
+                </div>
+
+                <div class="card">
+                    <p class="cardTitle">Confirmed</p>
+                    <p class="cardValue" id="confirmedBookings">0</p>
+                    <p class="cardSubtext">Upcoming appointments</p>
+                </div>
+
+                <div class="card">
+                    <p class="cardTitle">Customers/Clients</p>
+                    <p class="cardValue" id="totalCustomers">0</p>
+                    <p class="cardSubtext">Unique client records</p>
+                </div>
+            </section>
+
+            <section class="tableSection">
+                <h2>Recent Bookings</h2>
+
+                <table class="dataTable">
+                    <thead>
+                        <tr>
+                            <th>Client</th>
+                            <th>Service</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="recentBookings">
+                        <tr>
+                            <td colspan="5">No bookings yet.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="Admin-script.js"></script>
+
+    <script>
+        const adminUser = checkLogin();
+
+        if (adminUser) {
+            document.getElementById("currentDate").textContent =
+                new Date().toLocaleDateString("en-PH", {
+                    weekday: "long",
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric"
+                });
+        }
+    </script>
+
+</body>
+
+</html>
