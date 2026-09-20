@@ -20,7 +20,7 @@ if (loginForm) {
         if (users[username] && users[username] === password) {
             // store lang yung username sa localStorage para alam natin sino naka-login
             localStorage.setItem("adminUser", username);
-            window.location.href = "admin-dashboard.html";
+            window.location.href = "Admin-dashboard.html";
         } else {
             // error message if wrong
             errorMessage.textContent = "Invalid username or password";

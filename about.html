@@ -1,11 +1,4 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -21,38 +14,92 @@
 
 <body>
 
-    <section class="aboutPage">
-
-        <div class="topbox"><!-----------------------------------topboxclass-->
-
+    <section class="aboutPage"><!-----------------------------------topboxclass-->
+        <div class="topbox">
             <h4>LioNails</h4>
-
             <div class="navigation"><!----------------------------classbuttons-->
-
                 <button onclick="location.href='index.html'">HOME</button>
-
-                <button onclick="location.href='services.html'">SERVICES</button>
-
+                <button onclick="location.href='view-services.html'">SERVICES</button>
                 <button onclick="location.href='about.html'">ABOUT</button>
-
                 <button onclick="location.href='book_appointment.html'">
                     BOOK AN APPOINTMENT
                 </button>
-
                 <button onclick="location.href='contact.html'">CONTACT</button>
-
             </div><!---------------------------------------------/classbuttons-->
+        </div>
+    </section><!------------------------------------------------/topboxclass-->
 
-        </div><!------------------------------------------------/topboxclass-->
+
+    <!----------------------------------------Customer Reviews-->
+    <section class="reviewsPage">
+        <br>
+        <h1>Customer Reviews</h1>
+        <p class="reviewsSubtext"><i>Real feedback from clients who booked at LioNails.</i></p>
+
+        <div class="reviewButtons">
+            <button class="galleryBtn" onclick="location.href='gallery.html'">SEE GALLERY</button>
+            <button class="appointBtn" onclick="location.href='book_appointment.html'">BOOK APPOINTMENT</button>
+        </div>
+    </section>
+    <!----------------------------------------/Customer Reviews-->
 
 
-        <!-- DITO NATIN ILALAGAY ANG ABOUT CONTENT -->
+    <!----------------------------------------Reviews Grid-->
+    <section class="reviewsGrid">
 
+        <!---------------------------------------------------review box-->
+        <div class="reviewBox">
+            <div class="stars">★★★★★</div>
+            <p class="reviewText">"The most pristine salon I've ever visited. The attention to detail during my hard gel manicure was unparalleled. Truly an editorial-level experience."</p>
+            <div class="reviewer">
+                <img src="images/eleanor.jpg" alt="Eleanor V.">
+                <div class="reviewerInfo">
+                    <div class="reviewerName">ELEANOR V.</div>
+                    <div class="reviewerRole">Regular Client</div>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------------------review box-->
+
+        <!---------------------------------------------------review box-->
+        <div class="reviewBox">
+            <div class="stars">★★★★★</div>
+            <p class="reviewText">"LioNails is my sanctuary. The space is beautiful and calming, and their minimalist nail art is exactly what I've been looking for in the city."</p>
+            <div class="reviewer">
+                <img src="images/sarah.jpg" alt="Sarah M.">
+                <div class="reviewerInfo">
+                    <div class="reviewerName">SARAH M.</div>
+                    <div class="reviewerRole">New Client</div>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------------------review box-->
+
+        <!---------------------------------------------------review box-->
+        <div class="reviewBox">
+            <div class="stars">★★★★★</div>
+            <p class="reviewText">"I am incredibly particular about my cuticles, and the technicians here are flawless. A truly luxury service from the moment you walk through the door."</p>
+            <div class="reviewer">
+                <img src="images/camilla.jpg" alt="Camilla R.">
+                <div class="reviewerInfo">
+                    <div class="reviewerName">CAMILLA R.</div>
+                    <div class="reviewerRole">Monthly Member</div>
+                </div>
+            </div>
+        </div>
+        <!---------------------------------------------------review box-->
 
     </section>
+    <!----------------------------------------/Reviews Grid-->
 
+
+    <!----------------------------------------Salon Photo-->
+    <section class="salonPhoto">
+        <img src="images/salon-interior.jpg" alt="LioNails Salon Interior">
+    </section>
+    <!----------------------------------------/Salon Photo-->
+
+<script src="script.js"></script>
 </body>
 
-</html>
-</body>
 </html>

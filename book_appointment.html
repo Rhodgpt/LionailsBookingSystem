@@ -1,11 +1,4 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -15,34 +8,112 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <title>LioNails - About</title>
+    <title>LioNails - Book an Appointment</title>
 
 </head>
 
 <body>
-
-<section class="book_appointPage">
-    <div class="topbox">
-
-        <h4>LioNails</h4>
-
-        <div class="navigation">
-
-            <button onclick="location.href='index.html'">HOME</button>
-
-            <button onclick="location.href='services.html'">SERVICES</button>
-
-            <button onclick="location.href='about.html'">ABOUT</button>
-
-            <button onclick="location.href='book_appointment.html'">BOOK AN APPOINTMENT</button>
-
-            <button onclick="location.href='contact.html'">CONTACT</button>
-
+    <section class="book_appointPage"><!-----------------------------------topboxclass-->
+        <div class="topbox">
+            <h4>LioNails</h4>
+            <div class="navigation"><!----------------------------classbuttons-->
+                <button onclick="location.href='index.html'">HOME</button>
+                <button onclick="location.href='view-services.html'">SERVICES</button>
+                <button onclick="location.href='about.html'">ABOUT</button>
+                <button onclick="location.href='book_appointment.html'">
+                    BOOK AN APPOINTMENT
+                </button>
+                <button onclick="location.href='contact.html'">CONTACT</button>
+            </div><!---------------------------------------------/classbuttons-->
         </div>
-    </div>
+    </section><!------------------------------------------------/topboxclass-->
+
+
+    <!----------------------------------------Book Form-->
+    <section class="bookForm">
+        <br>
+        <h1>Book an Appointment</h1>
+        <p class="formSubtext">Fill out the form below to reserve your time at Lionails.</p>
+
+        <form>
+            <div class="formGrid">
+
+                <!-------------------left column-------------------->
+                <div class="formColumn">
+
+                    <div class="formGroup">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="e.g., Jordan Lee">
+                        <small>Required</small>
+                    </div>
+
+                    <div class="formGroup">
+                        <label>Service</label>
+                        <select>
+                            <option value="">Select a service</option>
+                            <option value="manicure">Express Manicure</option>
+                            <option value="pedicure">Express Pedicure</option>
+                            <option value="nailart">Nail Art</option>
+                        </select>
+                        <small>Gel, acrylic, pedicure, nail art...</small>
+                    </div>
+
+                    <div class="formGroup">
+                        <label>Preferred Time</label>
+                        <select>
+                            <option value="">Select a time slot</option>
+                            <option value="morning">Morning</option>
+                            <option value="afternoon">Afternoon</option>
+                        </select>
+                        <small>Morning/afternoon options available</small>
+                    </div>
+
+                </div>
+                <!-------------------/left column-------------------->
+
+                <!-------------------right column-------------------->
+                <div class="formColumn">
+
+                    <div class="formGroup">
+                        <label>Phone Number</label>
+                        <input type="text" placeholder="e.g., (555) 123-4567">
+                        <small>Required for confirmations</small>
+                    </div>
+
+                    <div class="formGroup">
+                        <label>Preferred Date</label>
+                        <input type="text" placeholder="MM/DD/YYYY">
+                        <small>Choose a date you prefer</small>
+                    </div>
+
+                    <div class="formGroup">
+                        <label>Notes</label>
+                        <input type="text" placeholder="Shape, length, design ideas, allergies">
+                        <small>Optional</small>
+                    </div>
+
+                </div>
+                <!-------------------/right column-------------------->
+
+            </div>
+
+            <!-------------------buttons-------------------->
+            <!-------------------buttons-------------------->
+<div class="formButtons">
+    <button type="button" class="saveBtn">SAVE FOR LATER</button>
+    <button type="submit" class="confirmBtn">CONFIRM BOOKING</button>
+</div>
+
+</form>
+
+<a href="index.html" id="backBtn">← BACK</a>
+
 </section>
+
+    </section>
+    <!----------------------------------------/Book Form-->
+
+<script src="script.js"></script>
 </body>
 
-</html>
-</body>
 </html>

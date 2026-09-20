@@ -1,25 +1,3 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="style.css">
-
-    <title>LioNails - About</title>
-
-</head>
-
-<body>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +6,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 
     <title>LioNails - Contact</title>
@@ -35,35 +17,110 @@
 </head>
 
 <body>
+
+    <!-----------------------------------topboxclass-->
+    <section class="topbox">
+        <h4>LioNails</h4>
+        <div class="navigation"><!----------------------------classbuttons-->
+            <button onclick="location.href='index.html'">HOME</button>
+            <button onclick="location.href='view-services.html'">SERVICES</button>
+            <button onclick="location.href='about.html'">ABOUT</button>
+            <button onclick="location.href='book_appointment.html'">
+                BOOK AN APPOINTMENT
+            </button>
+            <button onclick="location.href='contact.html'">CONTACT</button>
+        </div><!---------------------------------------------/classbuttons-->
+    </section><!------------------------------------------------/topboxclass-->
+
+
+    <!----------------------------------------Contact Form-->
     <section class="contactPage">
-        <div class="topbox">
-            <h4>LioNails</h4>
 
-            <div class="navigation">
+        <h1>Contact Lionails</h1>
+        <p class="contactSubtext">Questions about pricing, availability, or nail art? Send us a message.</p>
 
-                <button onclick="location.href='index.html'">HOME</button>
+        <form class="contactForm">
 
-                <button onclick="location.href='services.html'">SERVICES</button>
-
-                <button onclick="location.href='about.html'">ABOUT</button>
-
-                <button onclick="location.href='book_appointment.html'">
-                    BOOK AN APPOINTMENT
-                </button>
-
-                <button onclick="location.href='contact.html'">
-                    CONTACT
-                </button>
-
+            <!---------------------------------------------------row 1-->
+            <div class="formRow">
+                <div class="formGroup">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="e.g., you@email.com" required>
+                </div>
+                <div class="formGroup">
+                    <label for="phone">Phone (Optional)</label>
+                    <input type="tel" id="phone" name="phone" placeholder="e.g., (555) 987-6543">
+                </div>
             </div>
+            <!---------------------------------------------------/row 1-->
+
+            <!---------------------------------------------------row 2-->
+            <div class="formRow">
+                <div class="formGroup">
+                    <label for="topic">Topic</label>
+                    <select id="topic" name="topic" required>
+                        <option value="" disabled selected>Select a topic</option>
+                        <option value="booking">Booking</option>
+                        <option value="pricing">Pricing</option>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <span class="helperText">Booking, pricing, maintenance, other</span>
+                </div>
+                <div class="formGroup">
+                    <label for="message">Message</label>
+                    <input type="text" id="message" name="message" placeholder="Write your message here..." required>
+                </div>
+            </div>
+            <!---------------------------------------------------/row 2-->
+
+            <!---------------------------------------------------buttons-->
+            <div class="contactBtns">
+                <button type="button" class="callBtn" onclick="location.href='tel:+639633613416'">Call Salon</button>
+                <button type="submit" class="sendBtn">Send Message</button>
+            </div>
+            <!---------------------------------------------------/buttons-->
+
+        </form>
+
+        <div class="backWrap">
+            <button class="backBtn" onclick="location.href='index.html'">&larr; BACK</button>
         </div>
+
     </section>
+    <!----------------------------------------/Contact Form-->
 
+
+    <!----------------------------------------Footer-->
+    <footer class="siteFooter">
+
+        <div class="footerCol">
+            <h3 class="footerLogo">LioNails</h3>
+            <p>Lionails &copy; 2026</p>
+            <p class="footerLinks">Links:
+                <a href="index.html">Home</a> &bull;
+                <a href="view-services.html">Services</a> &bull;
+                <a href="gallery.html">Gallery</a> &bull;
+                <a href="about.html">About</a> &bull;
+                <a href="book_appointment.html">Book Appointment</a>
+            </p>
+        </div>
+
+        <div class="footerCol">
+            <h5>LOCATION</h5>
+            <p>Located: St. Campupot, Calantipe, Apalit, Pampanga</p>
+        </div>
+
+        <div class="footerCol">
+            <h5>CONTACT</h5>
+            <p>Phone: (096) 361-34816</p>
+            <p>Gmail: <a href="mailto:lcharmille12@gmail.com">lcharmille12@gmail.com</a></p>
+        </div>
+
+    </footer>
+    <!----------------------------------------/Footer-->
+
+<script src="script.js"></script>
 </body>
 
-</html>
-</body>
-
-</html>
-</body>
 </html>
