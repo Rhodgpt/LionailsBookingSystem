@@ -13,8 +13,6 @@ navButtons.forEach(button => {
 });
 //para to sa button sa taas kapag pipindutijn mo magiging ginto kulay
 
-
-
 //button ng View saka book apoint
 
 
@@ -28,23 +26,10 @@ const bookingTime = document.getElementById("bookingTime");
 const bookingMessage = document.getElementById("bookingMessage");
 
 const availableTimeSlots = [
-    "8:00 AM",
-    "9:00 AM",
-    "10:00 AM",
-    "11:00 AM",
-    "1:00 PM",
-    "2:00 PM",
-    "3:00 PM",
-    "4:00 PM",
-    "5:00 PM",
-    "6:00 PM",
-    "7:00 PM",
-    "8:00 PM",
-    "9:00 PM",
-    "10:00 PM",
-    "11:00 PM",
-    "12:00 AM",
-
+    "9:00 AM - 12:00 AM",
+    "1:00 PM - 04:00 PM",
+    "4:00 PM - 07:00 PM",
+    "7:00 PM - 10:00 PM",
 ];
 
 // for saving booking and it will list in the admin booking page then admin can confirm or cancel the booking
@@ -209,26 +194,26 @@ const fallbackClientServices = [
     {
         name: "Softgel Extension",
         description: "Lightweight nail extensions with a natural-looking finish.",
-        price: "To be confirmed",
+        price: "₱450 - ₱550",
         image: "image/pic.jpg"
     },
     {
         name: "Builder Gel / Hard Gel Overlay",
         description: "Adds strength and protection to natural nails.",
-        price: "To be confirmed",
+        price: "₱500 - ₱550",
         image: "image/pic1.jpg"
     },
     {
         name: "Gel Polish",
         description: "Long-lasting color with a smooth, glossy finish.",
-        price: "To be confirmed",
+        price: "₱249 - ₱299",
         image: "image/pic3.jpg"
     },
     {
         name: "Removal",
         description: "Safe removal of existing gel or nail extensions.",
-        price: "To be confirmed",
-        image: "image/pic4.jpg"
+        price: "₱200 - ₱300",
+        image: "image/pic5.jpg"
     }
 ];
 

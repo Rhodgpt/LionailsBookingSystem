@@ -298,7 +298,7 @@ function renderCustomers() {
     if (customers.length === 0) {
         customersTableBody.innerHTML = `
             <tr>
-                <td colspan="4">
+                <td colspan="5">
                     Client records will appear here after bookings are submitted.
                 </td>
             </tr>
@@ -314,9 +314,40 @@ function renderCustomers() {
                 <td>${customer.phone}</td>
                 <td>${customer.totalBookings}</td>
                 <td>${formatBookingDate(customer.latestDate)}</td>
+                <td>
+                <button class="filterBtn" type="button"
+                onclick="deleteCustomer('${customer.phone}')">
+                Delete
+                </button>
+</td>
             </tr>
         `;
     }).join("");
+}
+function deleteCustomer(phoneNumber) {
+    const bookings = getBookings();
+
+    const customerBookings = bookings.filter(function (booking) {
+        return booking.phone === phoneNumber;
+    });
+
+    const confirmed = window.confirm(
+        `Delete this client record and ${customerBookings.length} booking record(s)?`
+    );
+
+    if (!confirmed) {
+        return;
+    }
+
+    const updatedBookings = bookings.filter(function (booking) {
+        return booking.phone !== phoneNumber;
+    });
+
+    saveBookings(updatedBookings);
+
+    renderBookings();
+    renderDashboard();
+    renderCustomers();
 }
 
 renderDashboard();
@@ -351,7 +382,7 @@ const defaultServices = [
         name: "Removal",
         description: "Safe removal of existing gel or nail extensions.",
         price: "300 - 500 PHP",
-        image: "image/pic4.jpg"
+        image: "image/pic5.jpg"
     }
 ];
 
@@ -377,6 +408,10 @@ function getServices() {
     }
 
     return JSON.parse(savedServices);
+}
+
+function saveServices(services) {
+    localStorage.setItem("lionailsServices", JSON.stringify(services));
 }
 
 function renderServices() {
@@ -472,7 +507,7 @@ if (serviceForm) {
                     service.name = serviceName;
                     service.description = serviceDescription;
                     service.price = servicePrice;
-                    service.image = serviceImage || "papalitan pa image/pic.jpg";
+                    service.image = serviceImage || "image/pic.jpg"; 
                 }
 
                 return service;
@@ -485,7 +520,7 @@ if (serviceForm) {
                 name: serviceName,
                 description: serviceDescription,
                 price: servicePrice,
-                image: serviceImage || "papalitan pa image/pic.jpg"
+                image: serviceImage || "image/pic.jpg" 
             });
 
             saveServices(services);
