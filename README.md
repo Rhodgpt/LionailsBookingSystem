@@ -27,3 +27,4 @@ It allows clients to book schedules online, while administrators can track, upda
    git clone https://github.com/Rhodgpt/LionailsBookingSystem.git
 2. Open the project folder.
 3. Locate and open index.html in your browser to view the homepage.
+4. For the admin-login.html ask our group to have the sample passwords.
