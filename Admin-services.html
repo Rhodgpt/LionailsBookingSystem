@@ -37,7 +37,7 @@
                     <p class="adminWelcome">Manage LioNails services and prices.</p>
                 </div>
 
-                <button class="filterBtn" type="button">+ ADD SERVICE</button>
+                <button class="filterBtn" type="button" onclick="openServiceModal()">+ ADD SERVICE</button>
             </header>
 
             <section class="tableSection">
@@ -54,57 +54,51 @@
                         </tr>
                     </thead>
 
-                    <tbody>
-                        <tr>
-                            <td>Express Manicure</td>
-                            <td>File, shape, buff, and polish.</td>
-                            <td>₱30</td>
-                            <td><span class="badge confirmed">Active</span></td>
-                            <td><button class="filterBtn" type="button">Edit</button></td>
-                        </tr>
-
-                        <tr>
-                            <td>Signature Manicure</td>
-                            <td>Includes cuticle care and massage.</td>
-                            <td>₱45</td>
-                            <td><span class="badge confirmed">Active</span></td>
-                            <td><button class="filterBtn" type="button">Edit</button></td>
-                        </tr>
-
-                        <tr>
-                            <td>Nail Art</td>
-                            <td>Minimalist lines, chrome, or ombré. Per nail.</td>
-                            <td>₱5+</td>
-                            <td><span class="badge confirmed">Active</span></td>
-                            <td><button class="filterBtn" type="button">Edit</button></td>
-                        </tr>
-
-                        <tr>
-                            <td>Express Pedicure</td>
-                            <td>Quick refresh for toes.</td>
-                            <td>₱40</td>
-                            <td><span class="badge confirmed">Active</span></td>
-                            <td><button class="filterBtn" type="button">Edit</button></td>
-                        </tr>
-
-                        <tr>
-                            <td>Spa Pedicure</td>
-                            <td>Exfoliation, mask, and extended massage.</td>
-                            <td>₱65</td>
-                            <td><span class="badge confirmed">Active</span></td>
-                            <td><button class="filterBtn" type="button">Edit</button></td>
-                        </tr>
-
-                        <tr>
-                            <td>Hard Gel Full Set</td>
-                            <td>Durable, sculpted extensions.</td>
-                            <td>₱85</td>
-                            <td><span class="badge confirmed">Active</span></td>
-                            <td><button class="filterBtn" type="button">Edit</button></td>
-                        </tr>
-                    </tbody>
+                    <tbody id="servicesTableBody"></tbody>
                 </table>
             </section>
+
+            <div id="serviceModal" class="adminModal">
+    <div class="adminModalContent">
+
+        <button type="button" class="closeModalBtn" onclick="closeServiceModal()">
+            &times;
+        </button>
+
+        <h2 id="serviceModalTitle">Add Service</h2>
+
+        <form id="serviceForm">
+            <div class="formGroup">
+                <label for="serviceName">Service Name</label>
+                <input type="text" id="serviceName" required>
+                <label for ="serviceImage">Image path<span>(optional)</span></label>
+                <input type="text" id="serviceImage"
+                Placeholder="images/softgel extention.jpg">
+            </div>
+
+            <div class="formGroup">
+                <label for="serviceDescription">Description</label>
+                <textarea id="serviceDescription" rows="3" required></textarea>
+            </div>
+
+            <div class="formGroup">
+                <label for="servicePrice">Starting Price</label>
+                <input type="text" id="servicePrice" placeholder="e.g., ₱500" required>
+            </div>
+
+            <div class="modalActions">
+                <button type="button" class="filterBtn" onclick="closeServiceModal()">
+                    Cancel
+                </button>
+
+                <button type="submit" class="confirmBtn">
+                    Save Service
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>
 
         </main>
 

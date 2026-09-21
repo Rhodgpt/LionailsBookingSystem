@@ -415,11 +415,10 @@ body {
 }
 
 .servicePrice {
-    font-size: 20px;
-    color: #D4AF37; /* FIXED: dating #1A1A1A, ginawang gold gaya ng reference */
-    position: absolute;
-    top: 20px;
-    right: 20px;
+    font-size: 14px;
+    color: #D4AF37;
+    margin-top: 8px;
+    font-weight: bold;
 }
 
 .serviceText {
@@ -1419,4 +1418,139 @@ button {
 
 .filterBtn:hover {
     background: rgba(212, 175, 55, 0.1);
+}
+/*para sa form group tsaka textarea*/
+
+.formGroup textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #ffffff;
+    color: #1A1A1A;
+    font-size: 15px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.bookingMessage {
+    min-height: 20px;
+    color: #EDDF9B;
+    font-size: 14px;
+    margin: 20px 0 0;
+}
+
+.adminModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.adminModalContent {
+    width: 100%;
+    max-width: 460px;
+    background: #1A1A1A;
+    border: 1px solid #D4AF37;
+    border-radius: 6px;
+    padding: 30px;
+    position: relative;
+}
+
+.adminModalContent h2 {
+    color: #D4AF37;
+    margin-top: 0;
+}
+
+.closeModalBtn {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: #D4AF37;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.modalActions .confirmBtn {
+    padding: 10px 18px;
+}
+
+.contactDetails {
+    max-width: 960px;
+    margin: 0 auto 45px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    text-align: left;
+}
+
+.contactInfoCard {
+    background: #292929;
+    border: 1px solid #3a3a3a;
+    border-left: 3px solid #D4AF37;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.contactInfoCard h3 {
+    color: #D4AF37;
+    margin: 0 0 10px;
+    font-size: 14px;
+}
+
+.contactInfoCard p,
+.contactInfoCard a {
+    color: #EDDF9B;
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
+.contactMessageGroup {
+    text-align: left;
+}
+
+.contactMessage {
+    min-height: 20px;
+    color: #EDDF9B;
+    margin: 20px 0 0;
+    font-size: 14px;
+}
+
+@media (max-width: 700px) {
+    .contactDetails {
+        grid-template-columns: 1fr;
+    }
+}
+
+.serviceBookBtn {
+    margin-top: 18px;
+    padding: 10px 14px;
+    border: 1px solid #D4AF37;
+    border-radius: 4px;
+    background: transparent;
+    color: #D4AF37;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.serviceBookBtn:hover {
+    background: #D4AF37;
+    color: #1A1A1A;
 }
