@@ -1,16 +1,84 @@
 //para to sa button sa taas kapag pipindutijn mo magiging ginto kulay
-const navButtons = document.querySelectorAll(".navigation button");
+// Client navigation
+(() => {
+    const header = document.querySelector(".topbox");
+    const toggle = document.querySelector(".menuToggle");
+    const navigation = document.getElementById("siteNavigation");
 
-navButtons.forEach(button => {
-    button.addEventListener("click", () => {
+    if (!header || !toggle || !navigation) return;
 
-        navButtons.forEach(btn => {
-            btn.classList.remove("active");
-        });
+    const compactScreen = window.matchMedia("(max-width: 1100px)");
+    const links = navigation.querySelectorAll("a[href]");
 
-        button.classList.add("active");
+    const currentPage =
+        window.location.pathname.split("/").pop() || "index.html";
+
+    // Keep the current page highlighted after navigation.
+    links.forEach(link => {
+        const linkPage = new URL(link.href).pathname.split("/").pop();
+        const isActive = linkPage === currentPage;
+
+        link.classList.toggle("active", isActive);
+
+        if (isActive) {
+            link.setAttribute("aria-current", "page");
+        } else {
+            link.removeAttribute("aria-current");
+        }
     });
-});
+
+    function setMenuOpen(open) {
+        navigation.classList.toggle("is-open", open);
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.textContent = open ? "✕ CLOSE" : "☰ MENU";
+    }
+
+    toggle.addEventListener("click", () => {
+        const isOpen = toggle.getAttribute("aria-expanded") === "true";
+        setMenuOpen(!isOpen);
+    });
+
+    // Close and return focus to the menu button with Escape.
+    document.addEventListener("keydown", event => {
+        if (
+            event.key === "Escape" &&
+            toggle.getAttribute("aria-expanded") === "true"
+        ) {
+            setMenuOpen(false);
+            toggle.focus();
+        }
+    });
+
+    document.addEventListener("click", event => {
+        if (!header.contains(event.target)) {
+            setMenuOpen(false);
+        }
+    });
+
+    links.forEach(link => {
+        link.addEventListener("click", () => setMenuOpen(false));
+    });
+
+    // Reset the menu when crossing the desktop/tablet breakpoint.
+    compactScreen.addEventListener("change", event => {
+        const focusWillBeHidden =
+            event.matches &&
+            navigation.contains(document.activeElement);
+
+        const toggleHadFocus = document.activeElement === toggle;
+
+        setMenuOpen(false);
+
+        if (focusWillBeHidden) {
+            toggle.focus();
+        } else if (!event.matches && toggleHadFocus) {
+            navigation.querySelector('[aria-current="page"], a').focus();
+        }
+    });
+
+    setMenuOpen(false);
+    header.classList.add("has-menu");
+})();
 //para to sa button sa taas kapag pipindutijn mo magiging ginto kulay
 
 //button ng View saka book apoint

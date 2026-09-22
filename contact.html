@@ -10,19 +10,30 @@
 </head>
 
 <body>
-    <!-----------------------------------topboxclass-->
-    <section class="topbox">
-        <h4>LioNails</h4>
-        <div class="navigation"><!----------------------------classbuttons-->
-            <button onclick="location.href='index.html'">HOME</button>
-            <button onclick="location.href='view-services.html'">SERVICES</button>
-            <button onclick="location.href='about.html'">ABOUT</button>
-            <button onclick="location.href='book_appointment.html'">
-                BOOK AN APPOINTMENT
-            </button>
-            <button onclick="location.href='contact.html'">CONTACT</button>
-        </div><!---------------------------------------------/classbuttons-->
-    </section><!------------------------------------------------/topboxclass-->
+    <header class="topbox">
+    <h4>LioNails</h4>
+
+    <button
+        class="menuToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="siteNavigation"
+    >
+        ☰ MENU
+    </button>
+
+    <nav
+        class="navigation"
+        id="siteNavigation"
+        aria-label="Main navigation"
+    >
+        <a href="index.html">HOME</a>
+        <a href="view-services.html">SERVICES</a>
+        <a href="about.html">ABOUT</a>
+        <a href="book_appointment.html">BOOK AN APPOINTMENT</a>
+        <a href="contact.html">CONTACT</a>
+    </nav>
+</header>
 
     <!----------------------------------------Contact Form-->
     <section class="contactPage">

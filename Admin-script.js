@@ -1,3 +1,89 @@
+// Responsive admin navigation
+// yung log out nasa menu nadin 
+// eto din yung pinaka last na code na ginawa ko
+(() => {
+    const sidebar = document.querySelector(".adminSidebar");
+    const logo = sidebar?.querySelector(".sidebarLogo");
+    const menu = sidebar?.querySelector(".sidebarMenu");
+    const logoutSection = sidebar?.querySelector(".logoutSection");
+
+    // No sidebar on the login page.
+    if (!sidebar || !logo || !menu || !logoutSection) return;
+
+    menu.id = "adminNavigation";
+    logoutSection.id = "adminLogout";
+
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "adminMenuToggle";
+    toggle.setAttribute("aria-controls", "adminNavigation adminLogout");
+    logo.appendChild(toggle);
+
+    const compactScreen = window.matchMedia("(max-width: 1100px)");
+    const activeLink = menu.querySelector("a.active");
+
+    if (activeLink) {
+        activeLink.setAttribute("aria-current", "page");
+    }
+
+    function setMenuOpen(open) {
+        sidebar.classList.toggle("is-open", open);
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.textContent = open ? "✕ CLOSE" : "☰ MENU";
+    }
+
+    toggle.addEventListener("click", () => {
+        const isOpen = toggle.getAttribute("aria-expanded") === "true";
+        setMenuOpen(!isOpen);
+    });
+
+    document.addEventListener("keydown", event => {
+        if (
+            event.key === "Escape" &&
+            toggle.getAttribute("aria-expanded") === "true"
+        ) {
+            setMenuOpen(false);
+            toggle.focus();
+        }
+    });
+
+    document.addEventListener("click", event => {
+        if (!sidebar.contains(event.target)) {
+            setMenuOpen(false);
+        }
+    });
+
+    compactScreen.addEventListener("change", event => {
+        const focused = document.activeElement;
+        const focusWillBeHidden =
+            event.matches &&
+            (menu.contains(focused) || logoutSection.contains(focused));
+
+        setMenuOpen(false);
+
+        if (focusWillBeHidden) {
+            toggle.focus();
+        } else if (!event.matches && focused === toggle) {
+            (activeLink || menu.querySelector("a"))?.focus();
+        }
+    });
+
+    // Allow keyboard users to focus and scroll the tables.
+    document.querySelectorAll(".adminContent .tableSection")
+        .forEach(section => {
+            section.tabIndex = 0;
+            section.setAttribute("role", "region");
+            section.setAttribute(
+                "aria-label",
+                section.querySelector("h2")?.textContent.trim() || "Records"
+            );
+        });
+
+    setMenuOpen(false);
+    sidebar.classList.add("has-admin-menu");
+})();
+
+
 // ADMIN CREDENTIALS muna
 const users = {
     owner: "lionails",
