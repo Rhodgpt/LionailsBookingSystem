@@ -19,7 +19,6 @@ It allows clients to book schedules online, while administrators can track, upda
 - HTML
 - CSS
 - Javascript
-- React for later code
 
 ## ⚙️ Setup Instructions
 1. Clone the repository:
